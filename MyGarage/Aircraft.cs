@@ -4,26 +4,24 @@ using System.Text;
 
 namespace MyGarage
 {
-    class Aircraft
+    class Aircraft : Vehicle
     {
-        public string fuelCapacity { get; set; }
-        public string color { get; set; }
-        public int passengerOccupancy { get; set; }
+        public string PlaneSerial { get; set; } = "";
+        public int NumOfPropellers { get; set; } = 2;
 
-        public void Refuel()
+        public Aircraft(string planeSerial, int numOfPropellers)
         {
-            Console.WriteLine("The aircraft is now fueled");
+            this.PlaneSerial = planeSerial;
+            this.NumOfPropellers = numOfPropellers;
         }
-
         public void Fly()
         {
-            Console.WriteLine("Wooooosh");
+            Console.WriteLine($" All {NumOfPropellers} propellers on Aircraft No. {PlaneSerial} screamed Wooooosh as it flew away");
         }
 
         public void Land()
         {
-            Console.WriteLine("Now landing. Brace yourselves.");
+            Console.WriteLine($" Aircraft {PlaneSerial} is Now landing. Brace yourselves.");
         }
-
     }
 }

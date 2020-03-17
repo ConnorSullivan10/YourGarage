@@ -4,20 +4,18 @@ using System.Text;
 
 namespace MyGarage
 {
-    class Watercraft
+    class Watercraft : Vehicle
     {
-        public string fuelCapacity { get; set; }
-        public string color { get; set; }
-        public int passengerOccupancy { get; set; }
-
-        public void Refuel()
+        public int TotalHorsepower { get; set; } = 0;
+        public string Length { get; set; } = "";
+        public Watercraft(int totalHorsePower, string length)
         {
-            Console.WriteLine("The boat is now fueled");
+            TotalHorsepower = totalHorsePower;
+            Length = length;
         }
-
         public void Drive()
         {
-            Console.WriteLine("Pew pewwwwwwwwww");
+            Console.WriteLine($"Pew pewwwwwwwwww. That {TotalHorsepower}hp boat is pretty fast and looks bigger than it's actual size of {Length} ");
         }
 
     }

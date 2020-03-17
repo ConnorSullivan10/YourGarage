@@ -4,27 +4,25 @@ using System.Text;
 
 namespace MyGarage
 {
-    class Car
+    class Car : Vehicle
     {
-        public string fuelCapacity { get; set; }
-        public string color { get; set; }
-        public int passengerOccupancy { get; set; }
-
-        public void Refuel()
+        public string Make { get; set; } = "";
+        public string Model { get; set; } = "";
+        public int YearMake { get; set; } = 0;
+        public Car(string make, string model, int yearMake)
         {
-            Console.WriteLine("The car is now fueled");
+            this.Make = make;
+            this.Model = model;
+            this.YearMake = yearMake;
         }
-
         public void Drive()
         {
-            Console.WriteLine("Vroom vroom");
+            Console.WriteLine($"Vroom vroom yelled the aggressive {YearMake} {Make} {Model} ");
         }
 
         public void Brake()
         {
-            Console.WriteLine("Skkrrrrr. Slowing down");
+            Console.WriteLine($"The brakes squealed as the {Make} {Model} slowed down");
         }
-
-
     }
 }
